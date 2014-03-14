@@ -1,0 +1,27 @@
+star-rating {
+  position: relative;
+  display: inline-block;
+  font-size: 1.25em; }
+  star-rating .grade {
+    font-size: 0.85em;
+    color: #999;
+    vertical-align: top;
+    position: absolute;
+    top: 0;
+    line-height: 1.2em;
+    right: -2.5em; }
+    star-rating .grade:before {
+      vertical-align: top;
+      content: ' - '; }
+
+.stars-group,
+.stars-group--hover {
+  color: #EEE;
+  display: inline-block; }
+
+.stars-group--hover {
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  top: 0;
+  left: 0; }
