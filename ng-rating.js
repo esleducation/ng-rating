@@ -7,7 +7,7 @@
   directives.directive('starRating', function() {
     return {
       restrict: 'EA',
-      template: '<span class=stars-group> <span class="star-rating" ng-repeat="star in stars" ng-class="{true: \'star-empty\', false: \'star\'}[star.empty]"><i class="fa fa-star"></i></span> </span> <span style="color: #{{ color }}; width: {{ width }}" class="stars-group--hover"> <span class="star-rating--hover" ng-repeat="star in stars" ng-class="{true: \'star-empty\', false: \'star\'}[star.empty]"><i class="fa fa-star"></i></span> </span> <span class="grade" ng-if="showGrade">{{ value }}</span>',
+      template: '<span tooltip="{{ srTooltip }}"> <span class=stars-group > <span class="star-rating" ng-repeat="star in stars" ng-class="{true: \'star-empty\', false: \'star\'}[star.empty]"><i class="fa fa-star"></i></span> </span> <span style="color: #{{ color }}; width: {{ width }}" class="stars-group--hover"> <span class="star-rating--hover" ng-repeat="star in stars" ng-class="{true: \'star-empty\', false: \'star\'}[star.empty]"><i class="fa fa-star"></i></span> </span> <span class="grade" ng-if="showGrade">{{ value }}</span> </span>',
       link: function(scope, element, $attr) {
         scope.$watch('value', function(val, newVal) {
           var i, value, _i, _ref;
@@ -31,7 +31,8 @@
       },
       scope: {
         value: '=',
-        maxRating: '=?'
+        maxRating: '=?',
+        srTooltip: '=?'
       }
     };
   });

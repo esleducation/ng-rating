@@ -1,7 +1,13 @@
 star-rating {
   position: relative;
   display: inline-block;
-  font-size: 1.25em; }
+  font-size: 1.25em;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
   star-rating .grade {
     font-size: 0.85em;
     color: #999;
@@ -13,6 +19,8 @@ star-rating {
     star-rating .grade:before {
       vertical-align: top;
       content: ' - '; }
+  star-rating .tooltip {
+    white-space: nowrap; }
 
 .stars-group,
 .stars-group--hover {

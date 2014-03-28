@@ -3,13 +3,15 @@ directives = angular.module 'eslNgRating', []
 directives.directive 'starRating', () ->
 	restrict : 'EA'
 	template : '
-		<span class=stars-group>
-			<span class="star-rating" ng-repeat="star in stars" ng-class="{true: \'star-empty\', false: \'star\'}[star.empty]"><i class="fa fa-star"></i></span>
-		</span>
-		<span style="color: #{{ color }}; width: {{ width }}" class="stars-group--hover">
-			<span class="star-rating--hover" ng-repeat="star in stars" ng-class="{true: \'star-empty\', false: \'star\'}[star.empty]"><i class="fa fa-star"></i></span>
-		</span>
-		<span class="grade" ng-if="showGrade">{{ value }}</span>'
+		<span tooltip="{{ srTooltip }}">
+			<span class=stars-group >
+				<span class="star-rating" ng-repeat="star in stars" ng-class="{true: \'star-empty\', false: \'star\'}[star.empty]"><i class="fa fa-star"></i></span>
+			</span>
+			<span style="color: #{{ color }}; width: {{ width }}" class="stars-group--hover">
+				<span class="star-rating--hover" ng-repeat="star in stars" ng-class="{true: \'star-empty\', false: \'star\'}[star.empty]"><i class="fa fa-star"></i></span>
+			</span>
+			<span class="grade" ng-if="showGrade">{{ value }}</span>
+		</span>'
 	link: (scope, element, $attr) ->
 		scope.$watch 'value', (val, newVal) ->
 			if val isnt undefined
@@ -29,3 +31,4 @@ directives.directive 'starRating', () ->
 	scope:
 		value: '='
 		maxRating: '=?'
+		srTooltip: '=?'

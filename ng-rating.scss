@@ -2,6 +2,12 @@ star-rating{
 	position: relative;
 	display: inline-block;
 	font-size:1.25em;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 
 	.grade {
 		font-size: 0.85em;
@@ -16,6 +22,10 @@ star-rating{
 			vertical-align: top;
 			content : ' - ';
 		}
+	}
+
+	.tooltip {
+		white-space: nowrap;
 	}
 }
 
