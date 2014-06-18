@@ -8,7 +8,7 @@ Angular directive to display "stars" (or something else) based ratings
 
 First, you need to include the scripts and css in your page
 
-```markdown
+```html
 <link href="ng-rating.css" rel="styletheet" type="text/css" />
 <!-- optional font-awesome to have access to icons -->
 <link href="font-awesome.css" rel="styletheet" type="text/css" />
@@ -25,7 +25,7 @@ var myApp = angular.module('myAwesomeApp', ['ngRating']);
 
 Finaly you can use the ng-rating directive to display ratings like so
 
-```markdown
+```html
 <ng-rating ng-model="hotel.rating"></ng-rating>
 ```
 
