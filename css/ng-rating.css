@@ -1,0 +1,86 @@
+/**
+ * Base
+ */
+/* line 6, ../sass/ng-rating.scss */
+.ng-rating {
+  position: relative;
+  display: inline-block;
+  font-size: 25px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/* line 18, ../sass/ng-rating.scss */
+.ng-rating--editable .ng-rating-group {
+  cursor: pointer; }
+
+/**
+ * Grade
+ */
+/* line 26, ../sass/ng-rating.scss */
+.ng-rating-grade {
+  color: #999;
+  position: absolute;
+  right: -5px;
+  top: 3px;
+  font-size: 14px;
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%); }
+
+/**
+ * Stars
+ */
+/**
+ * Colors
+ */
+/* line 44, ../sass/ng-rating.scss */
+.ng-rating--xlow .ng-rating-group--hover {
+  color: #e11e21; }
+
+/* line 49, ../sass/ng-rating.scss */
+.ng-rating--low .ng-rating-group--hover {
+  color: #ff5d10; }
+
+/* line 54, ../sass/ng-rating.scss */
+.ng-rating--medium .ng-rating-group--hover {
+  color: #e8800e; }
+
+/* line 59, ../sass/ng-rating.scss */
+.ng-rating--high .ng-rating-group--hover {
+  color: #f9b836; }
+
+/* line 64, ../sass/ng-rating.scss */
+.ng-rating--xhigh .ng-rating-group--hover {
+  color: #fdd119; }
+
+/**
+ * Groups
+ */
+/* line 72, ../sass/ng-rating.scss */
+.ng-rating-group,
+.ng-rating-group--hover {
+  color: #EEE;
+  display: inline-block; }
+  /* line 77, ../sass/ng-rating.scss */
+  .ng-rating-group > span,
+  .ng-rating-group--hover > span {
+    margin-right: 2px;
+    display: inline-block; }
+
+/* line 82, ../sass/ng-rating.scss */
+.ng-rating-group--hover {
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out; }

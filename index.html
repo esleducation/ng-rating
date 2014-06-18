@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8" />
+
+	<link href="css/ng-rating.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+	<script src="js/ng-rating.js"></script>
+	<script>
+
+		var app = angular.module('ngRatingDemo', [
+			'ngRating'
+		]);
+
+		app.controller('hotelsListController', function($scope, $interval) {
+
+			$scope.ratings = [{
+				title : 'Rating 1',
+				description : 'I\'m not editable but update myself with a timer...',
+				rating : 3.5,
+				ratingOn : 5,
+				iconClass : 'fa fa-mortar-board',
+				editableRating : false,
+				showGrade : true
+			}, {
+				title : 'Rating 2',
+				description : 'I\'m not editable...',
+				rating : 1,
+				ratingOn : 5,
+				iconClass : 'fa fa-star',
+				editableRating : false,
+				showGrade : true
+			}, {
+				title : 'Rating 3',
+				description : 'I\'m editable...',
+				rating : 2,
+				ratingOn : 10,
+				iconClass : 'fa fa-star',
+				editableRating : true,
+				showGrade : true
+			}, {
+				title : 'Rating 4',
+				description : 'I\'m editable with a weird icon...',
+				rating : 2.5,
+				ratingOn : 5,
+				iconClass : 'fa fa-send',
+				editableRating : true,
+				showGrade : true
+			}, {
+				title : 'Rating 5',
+				description : 'I\'m editable and a lot larger than my neighbours...',
+				rating : 5,
+				ratingOn : 20,
+				iconClass : 'fa fa-star',
+				editableRating : true,
+				showGrade : false
+			}];
+
+
+			$interval(function() {
+				$scope.ratings[0].rating = Math.round(Math.random()*5*100) / 100;
+			}, 1000);
+
+		});
+
+	</script>
+
+	<title>ESL - ng-rating</title>
+
+</head>
+<body ng-app="ngRatingDemo" ng-controller="hotelsListController">
+
+	<div class="container" style="text-align:center;">
+
+		<div class="jumbotron">
+			<h1>ESL - ng-rating</h1>
+		</div>
+
+		<ul class="list-unstyled">
+			<li ng-repeat="rating in ratings" style="margin-bottom:50px">
+				<h1>{{ rating.title }}</h1>
+				<ng-rating ng-model="rating.rating"
+					icon-class="rating.iconClass"
+					editable="rating.editableRating"
+					max-rating="rating.ratingOn"
+					show-grade="rating.showGrade">
+				</ng-rating>
+				<p>{{ rating.description }}</p>
+			</li>
+		</ul>
+
+	</div>
+
+</body>
+</html>

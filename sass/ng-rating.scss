@@ -1,0 +1,91 @@
+@import "compass/css3";
+
+/**
+ * Base
+ */
+.ng-rating {
+	position: relative;
+	display: inline-block;
+	font-size:25px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.ng-rating--editable {
+	.ng-rating-group {
+		cursor:pointer;
+	}
+}
+
+/**
+ * Grade
+ */
+.ng-rating-grade {
+	color:#999;
+	position:absolute;
+	right:-5px; top:3px;
+	font-size:14px;
+	@include translateX(100%);
+}
+
+/**
+ * Stars
+ */
+.ng-rating-star {
+}
+
+/**
+ * Colors
+ */
+.ng-rating--xlow {
+	.ng-rating-group--hover {
+		color:#e11e21;
+	}
+}
+.ng-rating--low {
+	.ng-rating-group--hover {
+		color:#ff5d10;
+	}
+}
+.ng-rating--medium {
+	.ng-rating-group--hover {
+		color:#e8800e;
+	}
+}
+.ng-rating--high {
+	.ng-rating-group--hover {
+		color:#f9b836;
+	}
+}
+.ng-rating--xhigh {
+	.ng-rating-group--hover {
+		color:#fdd119;
+	}
+}
+
+/**
+ * Groups
+ */
+.ng-rating-group,
+%ng-rating-group{
+	color: #EEE;
+	display: inline-block;
+
+	> span {
+		margin-right:2px;
+		display:inline-block;
+	}
+}
+.ng-rating-group--hover{
+	@extend %ng-rating-group;
+	position: absolute;
+	overflow: hidden;
+	white-space: nowrap;
+	top: 0;
+	left: 0;
+	pointer-events:none;
+	@include transition(all .1s ease-in-out);
+}
