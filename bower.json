@@ -12,6 +12,10 @@
     "rating",
     "esl"
   ],
+  "main": [
+    "css/ng-rating.css",
+    "js/ng-rating.js"
+  ],
   "license": "MIT",
   "ignore": [
     "**/.*",
